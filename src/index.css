@@ -948,3 +948,80 @@ body {
     color: #38bdf8;
   }
 }
+
+
+/* =======================================
+   ✅ FINAL MOBILE NAVBAR FIX (ADD ONLY)
+======================================= */
+
+/* ---- FORCE LOGO TEXT (NO CUT, NO M.) ---- */
+.logo {
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: nowrap !important;
+}
+
+/* Desktop vs Mobile logo */
+.mobile-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #38bdf8;
+  }
+}
+
+/* ---- MOBILE NAVBAR LAYOUT FIX ---- */
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+    padding: 14px 16px;
+    justify-content: space-between;
+  }
+
+  .navbar nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar nav a {
+    font-size: 14px;
+    margin-left: 14px;
+    position: relative;
+  }
+}
+
+/* ---- FORCE ACTIVE LINK UNDERLINE (ALL MOBILES) ---- */
+@media (max-width: 768px) {
+  .navbar nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 18px;
+    height: 2px;
+    background: #38bdf8;
+    transform: translateX(-50%);
+    display: block !important;
+  }
+}
+
+/* ---- VERY SMALL MOBILES (NO BREAK) ---- */
+@media (max-width: 480px) {
+  .navbar nav a {
+    font-size: 13px;
+  }
+
+  .mobile-logo {
+    font-size: 19px;
+  }
+}
