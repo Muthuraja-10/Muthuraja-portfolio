@@ -826,9 +826,18 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 14px 20px;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 14px 16px;
   }
+
+  .logo {
+    font-size: 18px;
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 
   /* Hide menu links completely */
   .nav-links {
@@ -841,7 +850,7 @@ footer {
     text-align: center;
     white-space: nowrap;
   }
-}
+
 
 
 /* =======================================
@@ -911,4 +920,31 @@ body {
 .whatsapp-float {
   bottom: calc(22px + env(safe-area-inset-bottom));
   right: calc(22px + env(safe-area-inset-right));
+}
+
+@media (max-width: 768px) {
+  .navbar nav a.active::after {
+    bottom: -4px;
+    height: 2px;
+    background: #38bdf8;
+  }
+}
+
+/* ===== Logo Responsive Text ===== */
+
+.mobile-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: inline;
+    font-size: 20px;
+    font-weight: 700;
+    color: #38bdf8;
+  }
 }

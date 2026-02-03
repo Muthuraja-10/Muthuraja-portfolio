@@ -27,7 +27,11 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <h1 className="logo">WebServices</h1>
+      <h1 className="logo">
+  <span className="desktop-logo">MR Web Services</span>
+  <span className="mobile-logo">MR</span>
+</h1>
+
 
       <nav>
         {sections.map((id) => (
