@@ -844,3 +844,71 @@ footer {
 }
 
 
+/* =======================================
+   🔧 MOBILE & RESPONSIVE FIX PATCH
+======================================= */
+
+/* ---- Safe viewport height (mobile) ---- */
+.hero {
+  min-height: 90svh; /* replaces vh issue on mobile */
+}
+
+/* ---- Fix anchor scroll under sticky navbar ---- */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ---- Remove duplicate section padding override ---- */
+section {
+  padding: 90px 60px;
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 80px 24px;
+  }
+}
+
+/* ---- Navbar height consistency ---- */
+.navbar {
+  height: 72px;
+}
+
+/* ---- Mobile navbar fix ---- */
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+    padding: 14px 16px;
+    justify-content: center;
+  }
+}
+
+/* ---- Fix underline jumping issue ---- */
+.navbar nav a.active::after {
+  bottom: -4px;
+}
+
+/* Disable underline animation on very small screens */
+@media (max-width: 480px) {
+  .navbar nav a.active::after {
+    display: none;
+  }
+}
+
+/* ---- Prevent horizontal overflow ---- */
+body {
+  overflow-x: hidden;
+}
+
+/* ---- Services section cut fix ---- */
+.services,
+.projects,
+.contact {
+  overflow: visible;
+}
+
+/* ---- Floating WhatsApp safe area ---- */
+.whatsapp-float {
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  right: calc(22px + env(safe-area-inset-right));
+}
