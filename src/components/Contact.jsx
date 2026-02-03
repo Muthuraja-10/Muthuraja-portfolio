@@ -1,31 +1,4 @@
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
-
 const Contact = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_f62qrmh",        // ✅ Your Service ID
-        "template_78oypo",        // ✅ Your Template ID
-        form.current,
-        "ct3IzzqKHZD3Fe73d"       // ✅ Your Public Key
-      )
-      .then(
-        () => {
-          alert("✅ Message sent successfully!");
-          form.current.reset();
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("❌ Failed to send message");
-        }
-      );
-  };
-
   return (
     <section className="contact reveal" id="contact">
       <h2 className="section-title reveal">Contact</h2>
@@ -52,8 +25,6 @@ const Contact = () => {
             </p>
           </div>
 
-          
-
           {/* WHATSAPP BUTTON */}
           <a
             href="https://wa.me/918489387739?text=Hi%20Muthuraja,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project"
@@ -65,28 +36,32 @@ const Contact = () => {
           </a>
         </div>
 
-        {/* RIGHT SIDE FORM */}
+        {/* RIGHT SIDE FORM (NETLIFY FORM) */}
         <form
-          ref={form}
-          onSubmit={sendEmail}
+          name="contact"
+          method="POST"
+          data-netlify="true"
           className="contact-form reveal reveal-right"
         >
+          {/* REQUIRED hidden input for Netlify */}
+          <input type="hidden" name="form-name" value="contact" />
+
           <input
             type="text"
-            name="name"              // matches {{name}}
+            name="name"
             placeholder="Your Name"
             required
           />
 
           <input
             type="email"
-            name="email"             // matches {{email}}
+            name="email"
             placeholder="Your Email"
             required
           />
 
           <textarea
-            name="message"           // matches {{message}}
+            name="message"
             placeholder="Your Message"
             required
           ></textarea>
