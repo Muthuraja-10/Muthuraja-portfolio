@@ -7,7 +7,8 @@ const Contact = () => {
       </p>
 
       <div className="contact-wrapper">
-        {/* LEFT SIDE */}
+
+        {/* LEFT */}
         <div className="contact-info reveal reveal-left">
           <h3>Let’s build something great 🚀</h3>
 
@@ -16,18 +17,11 @@ const Contact = () => {
             opportunities. Feel free to reach out.
           </p>
 
-          <div className="contact-details">
-            <p>
-              <strong>Email:</strong> muthurajaperiyasamy10@gmail.com
-            </p>
-            <p>
-              <strong>Location:</strong> India, Tamil Nadu
-            </p>
-          </div>
+          <p><strong>Email:</strong> muthurajaperiyasamy10@gmail.com</p>
+          <p><strong>Location:</strong> India, Tamil Nadu</p>
 
-          {/* WHATSAPP BUTTON */}
           <a
-            href="https://wa.me/918489387739?text=Hi%20Muthuraja,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project"
+            href="https://wa.me/918489387739"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-btn"
@@ -36,14 +30,13 @@ const Contact = () => {
           </a>
         </div>
 
-        {/* RIGHT SIDE FORM (NETLIFY FORM) */}
+        {/* RIGHT – NETLIFY FORM */}
         <form
           name="contact"
           method="POST"
           data-netlify="true"
           className="contact-form reveal reveal-right"
         >
-          {/* REQUIRED hidden input for Netlify */}
           <input type="hidden" name="form-name" value="contact" />
 
           <input
@@ -68,6 +61,7 @@ const Contact = () => {
 
           <button type="submit">Send Message</button>
         </form>
+
       </div>
     </section>
   );
